@@ -1,5 +1,6 @@
 # kr_pavlova
 №1
+```
 #include <iostream>
 #include <cmath>
 
@@ -33,8 +34,10 @@ int main() {
 
     return 0;
 }
-  
+```
+
 №2
+```
 #include <iostream>
 #include <cmath>
 
@@ -56,8 +59,10 @@ int main() {
 
     return 0;
 }
-                       
+```
+
 №3
+```
 #include <iostream>
 using namespace std;
 
@@ -77,8 +82,10 @@ int main() {
     
     return 0;
 }
- 
+```
+
 №4
+```
 #include <iostream>
 #include <cmath>
 
@@ -104,9 +111,10 @@ int main() {
 
     return 0;
 }
-
+```
                     
 №6
+```
 #include <iostream>
 using namespace std;
 
@@ -120,9 +128,10 @@ int main() {
     cout << half(a, b) << endl;
     return 0;
 }
-  
+```
   
 №5
+```
 #include <iostream> 
 using namespace std;
 #include <cmath> 
@@ -164,3 +173,4 @@ int main()
 	}
 	return 0;
 }
+```
