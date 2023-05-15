@@ -1,5 +1,6 @@
 # kr_pavlova
 <h1>№1</h1>
+
 ```
 #include <iostream>
 #include <vector>
@@ -61,6 +62,7 @@ int main() {
 ```
 
 <h1>№2</h1>
+
 ```
 #include <iostream>
 #include <string>
@@ -91,7 +93,8 @@ int main() {
 }
 ```
 
-№3
+<h1>№3</h1>
+
 ```
 #include <iostream>
 #include <vector>
@@ -137,7 +140,9 @@ int main() {
 ```
 
 <h1>№4</h1>
+
 <h2>Бомба:</h2>
+
 ```
 std::cin >> n >> m;
 int** arr = new int*[n];
@@ -159,7 +164,9 @@ delete[] arr;
 
 return 0;
 ```
+
 <h2>Полное решение:</h2>
+
 ```
 #include <iostream>
 
@@ -198,14 +205,19 @@ int main() {
 ```
 
 <h1>№5</h1>
+
 <h2>Бомбы:</h2>
+
 <h3>1:</h3>
+
 ```
 void func(int& a, int b) {
     a -= b;
 }
 ```
+
 <h3>2:</h3>
+
 ```
 void func(int& a, int b) {
     a += b;
@@ -213,6 +225,7 @@ void func(int& a, int b) {
 ```
 
 <h2>Полное решение:</h2>
+
 ```
 #include <iostream>
 
@@ -229,7 +242,9 @@ int main() {
 ```
 
 <h1>№6</h1>
+
 <h2>Бомба:</h2>
+
 ```
 struct shipment {
     int volume;
@@ -248,7 +263,9 @@ bool compare(const shipment& a, const shipment& b) {
     return final_cost_a > final_cost_b;
 }
 ```
+
 <h2>Полный код:</h2>
+
 ```
 #include <iostream>
 
