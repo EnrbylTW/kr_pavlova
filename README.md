@@ -1,5 +1,5 @@
 # kr_pavlova
-№1
+<h1>№1</h1>
 ```
 #include <iostream>
 #include <vector>
@@ -60,7 +60,7 @@ int main() {
 }
 ```
 
-№2
+<h1>№2</h1>
 ```
 #include <iostream>
 #include <string>
@@ -136,7 +136,8 @@ int main() {
 }
 ```
 
-№4
+<h1>№4</h1>
+<h2>Бомба:</h2>
 ```
 std::cin >> n >> m;
 int** arr = new int*[n];
@@ -151,7 +152,6 @@ for (int i = 0; i < n; i++) {
     std::cout << std::endl;
 }
 
-// Освобождение памяти
 for (int i = 0; i < n; i++) {
     delete[] arr[i];
 }
@@ -159,15 +159,77 @@ delete[] arr;
 
 return 0;
 ```
+<h2>Полное решение:</h2>
+```
+#include <iostream>
 
-№5                    
+void pointers(int **a, int n, int m) {
+	int seed;
+	std::cin >> seed;
+	for (int i = 0; i < n; i++) {
+		for (int* el = a[i]; el < a[i] + m; el++) {
+			*el = seed;
+		}
+	}
+}
+
+int main() {
+	int n, m;
+	std::cin >> n >> m;
+	int** arr = new int*[n];
+	for (int i = 0; i < n; i++) {
+		arr[i] = new int[m];
+	}
+	pointers(arr, n, m);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			std::cout << arr[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	for (int i = 0; i < n; i++) {
+		delete[] arr[i];
+	}
+	delete[] arr;
+
+	return 0;
+}
+```
+
+<h1>№5</h1>
+<h2>Бомбы:</h2>
+<h3>1:</h3>
 ```
 void func(int& a, int b) {
     a -= b;
 }
 ```
+<h3>2:</h3>
+```
+void func(int& a, int b) {
+    a += b;
+}
+```
 
-№6
+<h2>Полное решение:</h2>
+```
+#include <iostream>
+
+void func(int& a, int b) {
+    a -= b;
+}
+
+int main() {
+	int a, b;
+	std::cin >> a >> b;
+	func(a, b);
+	std::cout << a;
+}
+```
+
+<h1>№6</h1>
+<h2>Бомба:</h2>
 ```
 struct shipment {
     int volume;
@@ -184,5 +246,38 @@ bool compare(const shipment& a, const shipment& b) {
     int final_cost_b = std::max(volume_cost_b, weight_cost_b);
 
     return final_cost_a > final_cost_b;
+}
+```
+<h2>Полный код:</h2>
+```
+#include <iostream>
+
+struct shipment {
+    int volume;
+    int weight;
+};
+
+bool compare(const shipment& a, const shipment& b) {
+    int volume_cost_a = a.volume / 5;
+    int weight_cost_a = a.weight / 6;
+    int final_cost_a = std::max(volume_cost_a, weight_cost_a);
+
+    int volume_cost_b = b.volume / 5;
+    int weight_cost_b = b.weight / 6;
+    int final_cost_b = std::max(volume_cost_b, weight_cost_b);
+
+    return final_cost_a > final_cost_b;
+}
+
+int main() {
+	shipment a{}, b{};
+	std::cin >> a.volume >> a.weight;
+	std::cin >> b.volume >> b.weight;
+	if (compare(a, b))
+		std::cout << 1;
+	else if (compare(b, a))
+		std::cout << -1;
+	else
+		std::cout << 0;
 }
 ```
