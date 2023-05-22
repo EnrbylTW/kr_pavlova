@@ -262,20 +262,20 @@ int main() {
 
 ```
 struct shipment {
-    int volume;
-    int weight;
+	double volume;
+	double weight;
 };
 
 bool compare(const shipment& a, const shipment& b) {
-    int volume_cost_a = a.volume / 5;
-    int weight_cost_a = a.weight / 6;
-    int final_cost_a = std::max(volume_cost_a, weight_cost_a);
+	double volume_cost_a = a.volume / 5;
+	double weight_cost_a = a.weight / 6;
+	double final_cost_a = std::max(volume_cost_a, weight_cost_a);
 
-    int volume_cost_b = b.volume / 5;
-    int weight_cost_b = b.weight / 6;
-    int final_cost_b = std::max(volume_cost_b, weight_cost_b);
+	double volume_cost_b = b.volume / 5;
+	double weight_cost_b = b.weight / 6;
+	double final_cost_b = std::max(volume_cost_b, weight_cost_b);
 
-    return final_cost_a > final_cost_b;
+	return final_cost_a > final_cost_b;
 }
 ```
 
@@ -285,20 +285,20 @@ bool compare(const shipment& a, const shipment& b) {
 #include <iostream>
 
 struct shipment {
-    int volume;
-    int weight;
+	double volume;
+	double weight;
 };
 
 bool compare(const shipment& a, const shipment& b) {
-    int volume_cost_a = a.volume / 5;
-    int weight_cost_a = a.weight / 6;
-    int final_cost_a = std::max(volume_cost_a, weight_cost_a);
+	double volume_cost_a = a.volume / 5;
+	double weight_cost_a = a.weight / 6;
+	double final_cost_a = std::max(volume_cost_a, weight_cost_a);
 
-    int volume_cost_b = b.volume / 5;
-    int weight_cost_b = b.weight / 6;
-    int final_cost_b = std::max(volume_cost_b, weight_cost_b);
+	double volume_cost_b = b.volume / 5;
+	double weight_cost_b = b.weight / 6;
+	double final_cost_b = std::max(volume_cost_b, weight_cost_b);
 
-    return final_cost_a > final_cost_b;
+	return final_cost_a > final_cost_b;
 }
 
 int main() {
