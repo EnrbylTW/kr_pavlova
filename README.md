@@ -3,60 +3,67 @@
 
 ```
 #include <iostream>
-#include <vector>
 #include <cmath>
 #include <limits>
 
-double calculateGeometricMean(const std::vector<int>& numbers) {
+double calculateGeometricMean(int numbers[], int size) {
     double product = 1.0;
     int count = 0;
-    
-    for (int number : numbers) {
-        if (number > 0 && number % 2 == 0) {
-            product *= number;
+
+    for (int i = 1; i <= size; i++) {
+        int number = numbers[i];
+        if (number > 0 && std::abs(number) % 2 == 0) {
+            product *= std::abs(number);
             count++;
         }
     }
-    
+
     if (count == 0) {
         return -1.0;
     }
-    
+
     return std::pow(product, 1.0 / count);
 }
 
 int main() {
     int n;
     std::cin >> n;
-    
-    std::vector<int> numbers(n);
-    
-    for (int i = 0; i < n; i++) {
+
+    int* numbers = new int[n + 1]; // Увеличиваем размер массива на 1
+
+    for (int i = 1; i <= n; i++) { // Изменяем границы цикла
         std::cin >> numbers[i];
     }
-    
-    double geometricMean = calculateGeometricMean(numbers);
-    
+
+    double geometricMean = calculateGeometricMean(numbers, n);
+
     if (geometricMean >= 0.0) {
+        std::cout << std::fixed;
+        std::cout.precision(10);
         std::cout << geometricMean << std::endl;
-    } else {
+    }
+    else {
         int minValue = std::numeric_limits<int>::max();
         bool foundMinValue = false;
-        
-        for (int i = 0; i < n; i++) {
+
+        for (int i = 1; i <= n; i++) { // Изменяем границы цикла
             if (i % 5 == 0 && numbers[i] < minValue) {
                 minValue = numbers[i];
                 foundMinValue = true;
             }
         }
-        
+
         if (foundMinValue) {
+            // may be std::abs(minValue)
             std::cout << minValue << std::endl;
-        } else {
+        }
+        else {
             std::cout << "No valid elements found." << std::endl;
         }
     }
-    
+
+    delete[] numbers;
+
     return 0;
 }
 ```
